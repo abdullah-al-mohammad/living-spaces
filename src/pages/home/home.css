@@ -1,0 +1,4 @@
+.bgImg{
+    background: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.589)), no-repeat center url('../../assets/home.png.jpg') ;
+    background-size: cover;
+}
