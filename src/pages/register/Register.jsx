@@ -2,18 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+    const handleRegister = (e) =>{
+        e.preventDefault()
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password')
+        console.log(name, photo, email, password);
+        
+    }
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-5xl font-bold">Register Now!</h1>
                     <p className="py-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <form className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -45,6 +55,7 @@ const Register = () => {
                             <Link to='/register'><button className="btn btn-primary">Login</button></Link>
                         </div>
                     </form>
+                    <p className='p-4'>Already have an account please? <Link className='text-blue-600' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>

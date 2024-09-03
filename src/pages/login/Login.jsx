@@ -33,6 +33,7 @@ const Login = () => {
                             <Link to='/register'><button className="btn btn-primary">Login</button></Link>
                         </div>
                     </form>
+                    <p className='p-5'>Don't have an account please? <Link className='text-blue-600' to='/register'>Register</Link></p>
                 </div>
             </div>
         </div>
