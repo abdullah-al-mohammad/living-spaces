@@ -74,7 +74,7 @@
       "area": "1200 sq ft",
       "location": "Mountain Range, Colorado",
       "facilities": ["Living Room", "Fireplace", "Kitchen"],
-      "image": "https://i.ibb.co/DfDpL15/pexels-petra-nesti-1766376-27428682.jpg",
+      "image": "https://i.ibb.co/Nxw0KKp/pexels-m-b-1151918023-27025789.jpg",
       "view_property": "https://example.com/property/6"
     },
     {
@@ -100,7 +100,7 @@
       "area": "10000 sq ft",
       "location": "Wine Country, Napa Valley",
       "facilities": ["Vineyard", "Tasting Room", "Living Room"],
-      "image": "https://example.com/images/vineyard_estate.jpg",
+      "image": "https://i.ibb.co/tCDTD3S/pexels-image-hunter-281453274-26925316.jpg",
       "view_property": "https://example.com/property/8"
     },
     {
@@ -113,7 +113,7 @@
       "area": "2200 sq ft",
       "location": "Suburban Area, Atlanta",
       "facilities": ["Living Room", "Garage", "Kitchen"],
-      "image": "https://example.com/images/suburban_townhouse.jpg",
+      "image": "https://i.ibb.co/98vfDyg/pexels-michaelgaultphotos-10258623.jpg",
       "view_property": "https://example.com/property/9"
     }
   ]

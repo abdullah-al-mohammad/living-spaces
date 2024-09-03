@@ -2,7 +2,9 @@ import { createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import Root from './root/Root'
 import Home from './pages/home/Home'
-import Estate from './pages/estate-section/Estate'
+import EstateGalleryDetails from './pages/EstateGalleryDetails/EstateGalleryDetails'
+import Register from './pages/register/Register'
+import Login from './pages/login/Login'
 
 
 const router = createBrowserRouter([
@@ -12,12 +14,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('residential.json')
       },
       {
-        path: '/services',
-        element: <Estate></Estate>,
+        path: '/estate/:id',
+        element: <EstateGalleryDetails></EstateGalleryDetails>,
         loader: () => fetch('residential.json')
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     ]
   }

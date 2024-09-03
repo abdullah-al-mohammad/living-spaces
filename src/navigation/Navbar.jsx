@@ -4,10 +4,10 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink>Home</NavLink></li>
-        <li><NavLink>Contact</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/contact'>Contact</NavLink></li>
         <li><NavLink to='/services'>Services</NavLink></li>
-        <li><NavLink>About</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
     </>
     return (
         <div className="navbar mb-10">
