@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
+import { useContext } from 'react'
 
 const Register = () => {
-    const handleRegister = (e) =>{
+
+    const { registerUser, loading } = useContext(AuthContext)
+
+    const handleRegister = (e) => {
         e.preventDefault()
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
@@ -10,7 +15,23 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password')
         console.log(name, photo, email, password);
-        
+
+        // if(loading){
+        //     return <span className="loading loading-bars loading-lg"></span>
+        // }
+
+        registerUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+
+            })
+            .catch(error => {
+                console.error(error);
+
+            }
+            )
+
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
@@ -52,10 +73,20 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <Link to='/register'><button className="btn btn-primary">Login</button></Link>
+                            <Link to='/register'><button className="btn btn-primary">Sign Up</button></Link>
                         </div>
                     </form>
                     <p className='p-4'>Already have an account please? <Link className='text-blue-600' to='/login'>Login</Link></p>
+                    {
+                        loading && (
+                            <div>
+                                <span className="loading loading-bars loading-xs"></span>
+                                <span className="loading loading-bars loading-sm"></span>
+                                <span className="loading loading-bars loading-md"></span>
+                                <span className="loading loading-bars loading-lg"></span>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>
