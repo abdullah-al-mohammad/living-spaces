@@ -34,13 +34,15 @@ const AuthProvider = ({children}) => {   // Accept children as props
        return signOut(auth)
     }
 
-    // user useState change
+     // function for Track user state
     useEffect(()=>{
         const unsubsCribe = onAuthStateChanged(auth, currentUser =>{
+            console.log('user in the auth state  change',currentUser);
             setUser(currentUser)
             setLoading(false)
         })
 
+        // Cleanup subscription on unmount
         return () => unsubsCribe()
     },[])
 

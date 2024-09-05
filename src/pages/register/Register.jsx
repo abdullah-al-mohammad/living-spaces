@@ -4,7 +4,8 @@ import { AuthContext } from '../../provider/AuthProvider';
 import { useContext } from 'react'
 
 const Register = () => {
-
+    const [error, setError] = useState()
+    // auth provider
     const { registerUser, loading } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
@@ -18,9 +19,9 @@ const Register = () => {
         const password = form.get('password')
         console.log(name, photo, email, password);
 
-        // if(loading){
-        //     return <span className="loading loading-bars loading-lg"></span>
-        // }
+        if(password.length < 6){
+            setError('password must be 6 charecter')
+        }
 
         registerUser(email, password)
             .then((result) => {
@@ -77,6 +78,7 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Sign Up</button>
                         </div>
+                        <p className='text-red-600'>{error}</p>
                     </form>
                     <p className='p-4'>Already have an account please? <Link className='text-blue-600' to='/login'>Login</Link></p>
                     {
