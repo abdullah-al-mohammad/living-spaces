@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useContext } from 'react'
 
 const Register = () => {
 
     const { registerUser, loading } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -24,7 +26,7 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-
+                navigate(location.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error);
@@ -73,7 +75,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <Link to='/register'><button className="btn btn-primary">Sign Up</button></Link>
+                            <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
                     <p className='p-4'>Already have an account please? <Link className='text-blue-600' to='/login'>Login</Link></p>
