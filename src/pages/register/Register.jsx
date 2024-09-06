@@ -5,12 +5,15 @@ import { useContext, useState, useRef } from 'react'
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { updateProfile } from 'firebase/auth';
 
+
 const Register = () => {
     const [error, setError] = useState()
     const [success, setSuccess] = useState()
-    const hasUpperCase = /[A-Z]/;
+    const hasUpperCase= /[A-Z]/;
+    const hasLowerCase= /[a-z]/;
     const emailRef = useRef(null)
     const [showPassword, setShowPassword] = useState()
+
     // auth provider
     const { registerUser, loading, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -27,14 +30,14 @@ const Register = () => {
         console.log(name, photo, email, password);
 
         // reset error and success
-        setError('')
-        setSuccess('')
+            setError('')
+            setSuccess('')
 
         if (password.length < 6) {
             setError('password must be 6 charecter')
             return
         }
-        else if (!hasUpperCase.test(password)) {
+        else if (!hasUpperCase.test(password) && hasLowerCase.test(password)){
             setError('Password must contain at least one uppercase letter.')
             return
         }
@@ -72,7 +75,8 @@ const Register = () => {
             navigate(location.state ? location.state : '/')
         })
         .catch(error => {
-            setError('user undefind', error)
+           // Log the actual error message and update the UI accordingly
+           setError('Error: ' + error.message);
         })
     }
     return (

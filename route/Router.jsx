@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
-import './App.css'
-import Root from './root/Root'
-import Home from './pages/home/Home'
-import EstateGalleryDetails from './pages/EstateGalleryDetails/EstateGalleryDetails'
-import Register from './pages/register/Register'
-import Login from './pages/login/Login'
+import Root from '../src/root/Root'
+import Home from '../src/pages/home/Home'
+import EstateGalleryDetails from '../src/pages/EstateGalleryDetails/EstateGalleryDetails'
+import Register from '../src/pages/register/Register'
+import Login from '../src/pages/login/Login'
+import PrivateRouter from './PrivateRouter'
 
 
 const router = createBrowserRouter([
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/estate/:id',
-        element: <EstateGalleryDetails></EstateGalleryDetails>,
+        element: <PrivateRouter><EstateGalleryDetails></EstateGalleryDetails></PrivateRouter>,
         loader: () => fetch('residential.json')
       },
       {

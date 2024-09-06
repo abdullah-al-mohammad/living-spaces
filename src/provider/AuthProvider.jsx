@@ -37,7 +37,7 @@ const AuthProvider = ({children}) => {   // Accept children as props
 
     // google sign in
     const googleSignIn = () =>{
-        signInWithPopup(auth, provider)
+       return signInWithPopup(auth, provider)
     }
 
      // function for Track user state
