@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useContext, useState, useRef } from 'react'
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
@@ -12,7 +12,7 @@ const Register = () => {
     const emailRef = useRef(null)
     const [showPassword, setShowPassword] = useState()
     // auth provider
-    const { registerUser, loading } = useContext(AuthContext)
+    const { registerUser, loading, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -62,6 +62,18 @@ const Register = () => {
             )
 
 
+    }
+
+    const handleGoogleSignUp = () =>{
+        googleSignIn()
+        .then(result =>{
+            const user = result.user
+            console.log(user);
+            navigate(location.state ? location.state : '/')
+        })
+        .catch(error => {
+            setError('user undefind', error)
+        })
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
@@ -124,6 +136,9 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Sign Up</button>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button onClick={handleGoogleSignUp} className="btn btn-success"><FaGoogle></FaGoogle>Google</button>
                         </div>
                         {error && <p className='text-red-600'>{error}</p>}
                         {success && <p className='text-red-600'>{success}</p>}
