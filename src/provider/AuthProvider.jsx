@@ -17,9 +17,9 @@ const AuthProvider = ({children}) => {   // Accept children as props
 
 
     // create user by sign up or register
-    const registerUser = (email, password) =>{
+    const registerUser = (email, password, photo, name) =>{
         setLoading(true)
-       return createUserWithEmailAndPassword(auth, email, password)
+       return createUserWithEmailAndPassword(auth, email, password, name, photo)
     }
 
     // loggedIn User
@@ -33,7 +33,6 @@ const AuthProvider = ({children}) => {   // Accept children as props
         setLoading(true)
        return signOut(auth)
     }
-
      // function for Track user state
     useEffect(()=>{
         const unsubsCribe = onAuthStateChanged(auth, currentUser =>{

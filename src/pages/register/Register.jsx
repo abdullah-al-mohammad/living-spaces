@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
-import { useContext } from 'react'
+import { useContext, useState, useRef } from 'react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [error, setError] = useState()
+    const [success, setSuccess] = useState()
+    const hasUpperCase = /[A-Z]/;
+    const emailRef = useRef(null)
+    const [showPassword, setShowPassword] = useState()
     // auth provider
     const { registerUser, loading } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -17,23 +23,44 @@ const Register = () => {
         const photo = form.get('name');
         const email = form.get('email');
         const password = form.get('password')
+        const accepted = form.get('accepted')
         console.log(name, photo, email, password);
 
-        if(password.length < 6){
+        // reset error and success
+        setError('')
+        setSuccess('')
+
+        if (password.length < 6) {
             setError('password must be 6 charecter')
+            return
+        }
+        else if (!hasUpperCase.test(password)) {
+            setError('Password must contain at least one uppercase letter.')
+            return
+        }
+        else if (!accepted) {
+            setError('please accept our terms and condition')
+            return
         }
 
-        registerUser(email, password)
+        registerUser(email, password, name, photo)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
                 navigate(location.state ? location.state : '/')
+
+                 // Update the user profile with name and photoURL
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: "https://example.com/jane-q-user/profile.jpg"
+                })
             })
             .catch(error => {
                 console.error(error);
 
             }
             )
+
 
     }
     return (
@@ -64,21 +91,42 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" name='email' className="input input-bordered" required />
+                            <input
+                                type="email"
+                                ref={emailRef}
+                                placeholder="email"
+                                name='email'
+                                className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" name='password' className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            <div className='relative'>
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="password"
+                                    name='password'
+                                    className="input input-bordered w-full" required />
+                                <span className='absolute top-4 right-2' onClick={() => setShowPassword(!showPassword)}>
+                                    {
+                                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                    }
+                                </span>
+                                <label className="label">
+                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="accepted" id="" />
+                            <label className='ml-2' htmlFor='terms'>Accept Our <a href="">terms And Conditions</a></label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Sign Up</button>
                         </div>
-                        <p className='text-red-600'>{error}</p>
+                        {error && <p className='text-red-600'>{error}</p>}
+                        {success && <p className='text-red-600'>{success}</p>}
                     </form>
                     <p className='p-4'>Already have an account please? <Link className='text-blue-600' to='/login'>Login</Link></p>
                     {

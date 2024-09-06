@@ -9,7 +9,7 @@
       "area": "2000 sq ft",
       "location": "Suburban Area, Springfield",
       "facilities": ["Living Room", "Swimming Pool", "Kitchen"],
-      "image": "https://i.ibb.co/n1N3Vbb/pexels-binyaminmellish-1396132.jpg",
+      "image": "https://i.ibb.co/Gp7nJFy/card1.jpg",
       "view_property": "https://example.com/property/1"
     },
     {
@@ -22,7 +22,7 @@
       "area": "1500 sq ft",
       "location": "Ocean Drive, Miami Beach",
       "facilities": ["Living Room", "Balcony", "Kitchen"],
-      "image": "https://i.ibb.co/R7Y0jJ9/pexels-te-lensfix-380994-1371360.jpg",
+      "image": "https://i.ibb.co/hMpvBvY/card2.jpg",
       "view_property": "https://example.com/property/2"
     },
     {
@@ -35,7 +35,7 @@
       "area": "3000 sq ft",
       "location": "Downtown, New York City",
       "facilities": ["Conference Room", "Reception Area", "Kitchenette"],
-      "image": "https://i.ibb.co/6PBXHtb/pexels-sander-dalhuisen-1332691-2566038.jpg",
+      "image": "https://i.ibb.co/LYjFsRh/card3.jpg",
       "view_property": "https://example.com/property/3"
     },
     {
@@ -48,7 +48,7 @@
       "area": "5000 sq ft",
       "location": "Rural Area, Kentucky",
       "facilities": ["Barn", "Garden", "Living Room"],
-      "image": "https://i.ibb.co/BCb1x17/pexels-nc-farm-bureau-mark-2252618.jpg",
+      "image": "https://i.ibb.co/zsjmSwY/card4.jpg",
       "view_property": "https://example.com/property/4"
     },
     {
@@ -61,7 +61,7 @@
       "area": "1800 sq ft",
       "location": "Downtown, Los Angeles",
       "facilities": ["Living Room", "Rooftop Access", "Kitchen"],
-      "image": "https://i.ibb.co/NLs1hDK/pexels-markusspiske-1089441.jpg",
+      "image": "https://i.ibb.co/dWtwKQ1/card5.jpg",
       "view_property": "https://example.com/property/5"
     },
     {
@@ -74,7 +74,7 @@
       "area": "1200 sq ft",
       "location": "Mountain Range, Colorado",
       "facilities": ["Living Room", "Fireplace", "Kitchen"],
-      "image": "https://i.ibb.co/Nxw0KKp/pexels-m-b-1151918023-27025789.jpg",
+      "image": "https://i.ibb.co/gJFL3Qg/card6.jpg",
       "view_property": "https://example.com/property/6"
     },
     {
@@ -87,7 +87,7 @@
       "area": "2500 sq ft",
       "location": "Mall of America, Minnesota",
       "facilities": ["Display Windows", "Storage Area", "Security System"],
-      "image": "https://i.ibb.co/YpK94NB/pexels-polina-tankilevitch-3735172.jpg",
+      "image": "https://i.ibb.co/K9WFbKH/card7.jpg",
       "view_property": "https://example.com/property/7"
     },
     {
@@ -100,7 +100,7 @@
       "area": "10000 sq ft",
       "location": "Wine Country, Napa Valley",
       "facilities": ["Vineyard", "Tasting Room", "Living Room"],
-      "image": "https://i.ibb.co/tCDTD3S/pexels-image-hunter-281453274-26925316.jpg",
+      "image": "https://i.ibb.co/6DRPT7H/card8.jpg",
       "view_property": "https://example.com/property/8"
     },
     {
@@ -113,7 +113,7 @@
       "area": "2200 sq ft",
       "location": "Suburban Area, Atlanta",
       "facilities": ["Living Room", "Garage", "Kitchen"],
-      "image": "https://i.ibb.co/98vfDyg/pexels-michaelgaultphotos-10258623.jpg",
+      "image": "https://i.ibb.co/HDHHm3L/card10.jpg",
       "view_property": "https://example.com/property/9"
     }
   ]
