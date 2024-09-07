@@ -18,6 +18,8 @@ const Register = () => {
     const { registerUser, loading, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+    console.log(location);
+    
 
     const handleRegister = (e) => {
         e.preventDefault()

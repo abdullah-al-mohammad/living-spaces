@@ -5,7 +5,6 @@ const EstateGallery = ({ estateData }) => {
     const navigation = useNavigate()
     const { estate_title, image, segment_name, description, id, status } = estateData
     const handleViewDetails = () =>{
-        console.log('how are you', id);
         navigation(`/estate/${id}`)
         
     }
