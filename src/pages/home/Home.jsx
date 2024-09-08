@@ -4,10 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useSwiper } from 'swiper/react';
+import 'swiper/swiper-bundle.css'
 
 import home1 from '../../assets/carousel1.jpg'
 import home2 from '../../assets/carousel2.jpg'
 import home3 from '../../assets/carousel3.jpg'
+import home4 from '../../assets/carousel4.jpg'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -57,7 +59,7 @@ const Home = () => {
                                 <SwiperSlide><img src={home1} alt="" /></SwiperSlide>
                                 <SwiperSlide><img src={home2} alt="" /></SwiperSlide>
                                 <SwiperSlide><img src={home3} alt="" /></SwiperSlide>
-                                <SwiperSlide><img src={home3} alt="" /></SwiperSlide>
+                                <SwiperSlide><img src={home4} alt="" /></SwiperSlide>
                                 <SwiperSlide><img src={home3} alt="" /></SwiperSlide>
                             </Swiper>
                         </div>
