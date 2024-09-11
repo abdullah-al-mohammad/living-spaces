@@ -13,7 +13,6 @@ import home4 from '../../assets/carousel4.jpg'
 
 // Import Swiper styles
 import 'swiper/css';
-import Navbar from '../../navigation/Navbar';
 
 // import css
 import './home.css'
@@ -28,7 +27,6 @@ const Home = () => {
     return (
         <div>
             <div className='bgImg mb-10'>
-                <Navbar></Navbar>
                 <div className='container mx-auto'>
                     <div>
                         <div className='mb-10'>
