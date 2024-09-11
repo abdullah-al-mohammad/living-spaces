@@ -66,7 +66,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-3 container mx-auto'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-x-11 container mx-auto'>
                 {
                     loadData.map((data) => <EstateGallery key={data.id} estateData={data}></EstateGallery>)
                 }

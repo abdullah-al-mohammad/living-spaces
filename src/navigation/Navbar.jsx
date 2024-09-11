@@ -41,15 +41,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className='flex gap-x-28 items-center'>
-                    <div className="w-10 rounded-full">
-                        {user ? <div className='flex gap-x-10'>
+                <div className='flex gap-x-4 items-center'>
+                    <div className="rounded-full">
+                        {user ? <div className='flex gap-x-4'>
                             <p>{user.displayName}</p>
-                            <img className='rounded-full'
+                            <img className='rounded-full w-10'
                                 alt="user"
                                 src={user.photoURL}/>
                         </div>
-                        : <img className='rounded-full'
+                        : <img className='rounded-full w-10'
                         alt="user"
                         src={profileicon}/>}
                     </div>

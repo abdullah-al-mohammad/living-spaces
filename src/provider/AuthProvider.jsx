@@ -1,6 +1,6 @@
 import React from 'react';
 import {createContext, useState, useEffect} from 'react'
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
 import app from '../firebase/firebase.config';
 
@@ -9,6 +9,7 @@ import app from '../firebase/firebase.config';
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider()
+const githubProvider = new GithubAuthProvider()
 
 
 const AuthProvider = ({children}) => {   // Accept children as props
@@ -40,6 +41,11 @@ const AuthProvider = ({children}) => {   // Accept children as props
        return signInWithPopup(auth, provider)
     }
 
+    // github signup
+    const githubSignIn = () =>{
+        return signInWithPopup(auth, provider)
+    }
+
      // function for Track user state
     useEffect(()=>{
         const unsubsCribe = onAuthStateChanged(auth, currentUser =>{
@@ -59,7 +65,9 @@ const AuthProvider = ({children}) => {   // Accept children as props
         registerUser,
         loginUser,
         logOut,
-        googleSignIn
+        googleSignIn,
+        githubSignIn
+        
 
 
     } // Can include other auth-related functions or data

@@ -5,6 +5,7 @@ import EstateGalleryDetails from '../src/pages/EstateGalleryDetails/EstateGaller
 import Register from '../src/pages/register/Register'
 import Login from '../src/pages/login/Login'
 import PrivateRouter from './PrivateRouter'
+import ContactUs from '../src/pages/contactUs/ContactUs'
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/contact',
+        element: <PrivateRouter><ContactUs></ContactUs></PrivateRouter>
       }
     ]
   }

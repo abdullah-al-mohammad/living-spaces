@@ -9,7 +9,7 @@ const EstateGallery = ({ estateData }) => {
         
     }
     return (
-        <div className="card bg-base-100 w-96 shadow-xl mb-5">
+        <div className="card bg-base-100 shadow-xl mb-5">
             <figure>
                 <img
                     src={image}
