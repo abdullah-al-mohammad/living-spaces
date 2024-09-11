@@ -38,11 +38,13 @@ const AuthProvider = ({children}) => {   // Accept children as props
 
     // google sign in
     const googleSignIn = () =>{
+        setLoading(true)
        return signInWithPopup(auth, provider)
     }
 
-    // github signup
+    // github signUp
     const githubSignIn = () =>{
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
 
@@ -74,8 +76,7 @@ const AuthProvider = ({children}) => {   // Accept children as props
 
     return (
         <AuthContext.Provider value={authInfo}>
-            {children} // Render the children components
-            
+            {children} 
         </AuthContext.Provider>
     );
 };

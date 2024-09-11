@@ -6,11 +6,13 @@ import Register from '../src/pages/register/Register'
 import Login from '../src/pages/login/Login'
 import PrivateRouter from './PrivateRouter'
 import ContactUs from '../src/pages/contactUs/ContactUs'
+import ErrorPage from '../src/pages/errorPage/ErrorPage'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
+    errorElement: <ErrorPage></ErrorPage>,
     element: <Root></Root>,
     children: [
       {

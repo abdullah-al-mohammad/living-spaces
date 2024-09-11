@@ -21,11 +21,6 @@ import EstateGallery from '../EstateGallery/EstateGallery';
 import { useLoaderData } from 'react-router-dom';
 
 
-
-
-
-
-
 const Home = () => {
     const swiper = useSwiper();
     const loadData = useLoaderData()
@@ -39,7 +34,7 @@ const Home = () => {
                         <div className='mb-10'>
                             <div className='text-center max-w-xl mx-auto'>
                                 <h1 className='text-5xl text-white font-poppins mb-5 text-center md:w-auto'>The Ideal Residential Living Spaces for Privacy and Comfort</h1>
-                                <p className='font-poppins'>Single-family homes are residential living spaces designed to accommodate one household. These homes are typically detached, meaning they stand alone without shared walls, offering privacy and personal space. They come in various styles and sizes, from modest cottages to expansive estates. Single-family homes often include amenities such as private yards, garages, and multiple bedrooms and bathrooms, making them ideal for families or individuals seeking more space</p>
+                                <p className='font-poppins text-white'>Single-family homes are residential living spaces designed to accommodate one household. These homes are typically detached, meaning they stand alone without shared walls, offering privacy and personal space. They come in various styles and sizes, from modest cottages to expansive estates. Single-family homes often include amenities such as private yards, garages, and multiple bedrooms and bathrooms, making them ideal for families or individuals seeking more space</p>
                             </div>
                         </div>
                         <div>

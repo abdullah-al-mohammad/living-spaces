@@ -9,7 +9,7 @@ const ContactUs = () => {
             <div className='container mx-auto'>
                 <Navbar></Navbar>
             </div>
-            <div className=''>
+            <div className='contactBg'>
                 <div className='container mx-auto'>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-10 py-10'>
                         <div className='card'>
